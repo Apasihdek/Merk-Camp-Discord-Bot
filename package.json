@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/computingcomrade/RPG_Discord_bot#readme",
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "fs": "^0.0.1-security"
   }
 }
