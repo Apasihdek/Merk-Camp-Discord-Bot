@@ -12,8 +12,7 @@ module.exports =
                 url: 'https://github.com/computingcomrade/Merk-Camp-Discord-Bot',
             },
             title: '**__Merk Camp Bot__**',
-            //url: 'https://github.com/computingcomrade/Merk-Camp-Discord-Bot',
-            description: '>>> ```Take quests, go on adventures, collect treasures and grow your merk business! Merk Camp is a discord bot game that has taken inspiration from the settings of many RPGs. The bot allows you to run a mercenary camp equipping and keeping your merks healthy as they go on various adventures! Then once you collect the rewards of an adventure you can upgrade your merks and grow your business. The bots code has been made publically avalable on github for those who are curious and want to look into how it works to learn from it.```',
+            description: '**Take quests, go on adventures, collect treasures and grow your merk business! Merk Camp is a discord bot game that has taken inspiration from the settings of many RPGs. The bot allows you to run a mercenary camp equipping and keeping your merks healthy as they go on various adventures! Then once you collect the rewards of an adventure you can upgrade your merks and grow your business. The bots code has been made publically avalable on github for those who are curious and want to look into how it works to learn from it.**',
             fields: [
                 {
                     //spacer
