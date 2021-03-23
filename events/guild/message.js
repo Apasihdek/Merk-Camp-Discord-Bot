@@ -1,6 +1,9 @@
 //node module requierments
 const { Message } = require("discord.js"); //Allows use of the node module to interact with the discord API
 
+//bot-id
+botid = '817919087820668968';
+
 
 //========================================================================================================================\\
 //===================== from a message check if the command requested exists and execute accordingly =====================\\

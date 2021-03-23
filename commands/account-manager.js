@@ -1,16 +1,18 @@
 module.exports =
 {
-    name: 'newcamp',
+    name: 'account-manage',
     description: "Displays when a user does not have a camp set up",
+    allowedSender: 'anyone',
     execute(client, message, args, Discord, )
     {
-        gg = message.author.id
-        const Embed = {
-            
+        userid = message.author.id
+        const Embed = 
+        { 
             color: 0xf0e5bc,
-            title: '**__Set up a new camp!__**',
-            description: '**To use the merk camp bot you need to set up a camp! Follow the below prompts to set up your camp and get to playing! If you already have a camp you can create a new one, be warned tho this will erase all the data of your old camp and you will be starting over again.**',
-            fields: [
+            title: '**__Manage your account!__**',
+            description: '**Want to play the game? Want to start fresh? Wanting to delete the your game account? This is the hub to change settings for your account.**',
+            fields: 
+            [
                 {
                     //spacer
                     name: '\u200b',
@@ -20,43 +22,42 @@ module.exports =
                 {
                     name:  '**:white_check_mark: | Create a new camp**',
                     value: '>>> ```Want to play with the merk camp bot? Want to start fresh with a new camp? Just click the ✅ reaction and you will be walked through creating your new camp!``` ',
-                    inline: true,
-                },
-                {
-                    name: '**:x: | Cancel**',
-                    value: '>>> ```Dont want to make a new camp? No problem just hit the ❌ reaction.```',
                     inline: false,
                 },
-
-
+                {
+                    name: '**:wastebasket: | Delete account**',
+                    value: '>>> ```Deleteing your account? Sad to see you go but no problem just hit the 🗑️ reaction then confirm```',
+                    inline: false,
+                },
+                {
+                    name: '**:x: | Nevermind**',
+                    value: '>>> ```Dont need to edit anything? No problem just hit the ❌ reaction.... it really does nothing if im honest```',
+                    inline: false,
+                },
             ],
             timestamp: new Date(),
-            footer: {
+            footer: 
+            {
                 text: 'Merk Camp | Computing Comrade',
                 icon_url: 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png',
             },
         };        
         message.channel.send({ embed: Embed }).then(message =>
         {
-                message.react('✅');
-                message.react('❌');
-                
-                //stuff
-
-
-                 // Set a filter to ONLY grab those reactions & discard the reactions from the bot
+            message.react('✅');
+            message.react('🗑️');
+            message.react('❌');
+             // Set a filter to ONLY grab those reactions & discard the reactions from the bot
             const filter = (reaction, user) => 
             {
-                return ['✅', '❌'].includes(reaction.emoji.name) && user.id == gg;
+                return ['✅', '❌', '🗑️'].includes(reaction.emoji.name) && user.id == userid;
             };
-    
             // Create the collector
             const collector = message.createReactionCollector(filter, 
             {
                 max: 1,
                 time: 60000
             });
-    
             collector.on('end', (collected, reason) => 
             {
                 if (reason === 'time') 
@@ -74,11 +75,22 @@ module.exports =
 
                     if (emoji === '✅') 
                     {
-                        message.channel.send('Glad your reaction is ✅!');
+                        client.commands.get('setup-guide').execute(client, message, args, Discord, userid );
+                    } 
+                    else if (emoji === '🗑️') 
+                    {
+                        client.commands.get('delete-account').execute(client, message, args, Discord, userid );
+
                     } 
                     else if (emoji === '❌') 
                     {
-                        message.channel.send('Camp creation canceled, have a good day!');
+                        const Embed = 
+                        {
+                        
+                            color: 0xf0e5bc,
+                            description: 'Have a good day!',
+                        };
+                        message.channel.send({ embed: Embed })
                     } 
                     else 
                     {
@@ -88,7 +100,5 @@ module.exports =
                 }
             });
         });
-            
-
     }
 }
