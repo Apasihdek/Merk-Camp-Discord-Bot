@@ -13,4 +13,11 @@ Have trouble remembering that long list of commands in depth bot games often hav
 - ``merk-about`` provides some interesting insight into the games idea and insperation.
 
 ## Usage (self hosing only for now)
-will update this later
+1. Make a bot  
+(will add later)
+2. Make a mongobd database  
+(will add later)
+3. Download dependencies   
+(will add later)
+4. Make a ``.env`` file  
+(will add later)
