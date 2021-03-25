@@ -12,12 +12,19 @@ Have trouble remembering that long list of commands in depth bot games often hav
 - ``merk-help`` provides a list of all commands that the user can use along with desriptions.
 - ``merk-about`` provides some interesting insight into the games idea and insperation.
 
-## Usage (self hosing only for now)
+## Usage (self hosing only for now, i assume you have basic knowledge about mongo and node)
 1. Make a bot  
-(will add later)
-2. Make a mongobd database  
-(will add later)
-3. Download dependencies   
-(will add later)
-4. Make a ``.env`` file  
-(will add later)
+go to https://discord.com/developers and select the new application button, then once you created a new application convert it into a bot by clicking the bot setting.
+2. Invite the bot to your server  
+go to https://discordapi.com/permissions.html select all the permissions (in the future this will be changed to just requierd ones) and paste in yout client id (found with the privious step) and invite it to your server
+4. Make a mongobd cluster  
+fo to https://www.mongodb.com/ and log into your account, then navagate through making a cluster and get the SRV
+4. Download dependencies   
+run ```npm install``` in the terminal and all the requierd dependencies should download
+5. Make a ``.env`` file  
+in the main folder make a ``.env`` folder and paste in  
+```DISCORD_TOKEN = <replace this all with your token>```  
+```MONGODB_SRV = <replace this with your srv>```
+6. Run the bot!  
+in the console type ```node .``` and your bot will start right up!
+
