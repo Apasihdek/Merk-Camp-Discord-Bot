@@ -22,7 +22,7 @@ fo to https://www.mongodb.com/ and log into your account, then navagate through 
 4. Download dependencies   
 run ```npm install``` in the terminal and all the requierd dependencies should download
 5. Make a ``.env`` file  
-in the main folder make a ``.env`` folder and paste in  
+in the main folder make a ``.env`` file and paste in  
 ```DISCORD_TOKEN = <replace this all with your token>```  
 ```MONGODB_SRV = <replace this with your srv>```
 6. Run the bot!  
